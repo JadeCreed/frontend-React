@@ -6,7 +6,7 @@ function Inventory() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/items/")
+      .get("https://django-backend-r668.onrender.com/api/items/")
       .then((response) => {
         setItems(response.data);
       })

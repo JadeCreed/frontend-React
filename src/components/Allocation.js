@@ -17,7 +17,7 @@ function Allocation() {
   // Fetch allocations
   const fetchAllocations = () => {
     axios
-      .get("http://127.0.0.1:8000/api/allocations/")
+      .get("https://django-backend-r668.onrender.com/api/allocations/")
       .then((res) => setAllocations(res.data))
       .catch((err) => console.error(err));
   };
@@ -25,7 +25,7 @@ function Allocation() {
   // Fetch items
   const fetchItems = () => {
     axios
-      .get("http://127.0.0.1:8000/api/items/")
+      .get("https://django-backend-r668.onrender.com/api/items/")
       .then((res) => setItems(res.data))
       .catch((err) => console.error(err));
   };
@@ -63,7 +63,7 @@ function Allocation() {
     }
 
     axios
-      .post("http://127.0.0.1:8000/api/allocations/", newAllocation)
+      .post("https://django-backend-r668.onrender.com/api/allocations/", newAllocation)
       .then((res) => {
         // ADD instantly to state
         setAllocations((prev) => [...prev, res.data]);
@@ -86,7 +86,7 @@ function Allocation() {
   // Distribute allocation
   const distribute = (id) => {
     axios
-      .post(`http://127.0.0.1:8000/api/allocations/${id}/distribute/`)
+      .post(`https://django-backend-r668.onrender.com/api/allocations/${id}/distribute/`)
       .then(() => {
         // Update instantly
         setAllocations((prev) =>
